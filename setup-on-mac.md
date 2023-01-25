@@ -57,12 +57,12 @@ protostar build
 
 # protostar declare
 ```
-protostar -p devnet declare ./build/main.json
+protostar -p devnet --account-address $ACCT_ADDR declare ./build/main.json --private-key-path ./.pkey_local --max-fee auto
 ```
 
 # protostar deployment
 ```
-protostar -p devnet deploy  ./build/main.json
+protostar -p devnet deploy --account-address $ACCT_ADDR  ./build/main.json --private-key-path ./.pkey_local --max-fee auto
 ```
 
 # protostar call smartcontract
