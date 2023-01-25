@@ -78,7 +78,7 @@ protostar -p devnet invoke --contract-address $CONTRACT_ADDR --function "increas
 # protostar.toml
 ```
 [project]
-protostar-version = "0.7.0"
+protostar-version = "0.9.1"
 lib-path = "lib"
 
 [contracts]
