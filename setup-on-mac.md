@@ -57,22 +57,22 @@ protostar build
 
 # protostar declare
 ```
-protostar -p devnet --account-address $ACCT_ADDR declare ./build/main.json --private-key-path ./.pkey_local --max-fee auto
+protostar -p devnet declare ./build/main.json --account-address ${ACCT_ADDR} --private-key-path ./.pkey --max-fee auto
 ```
 
 # protostar deployment
 ```
-protostar -p devnet deploy --account-address $ACCT_ADDR  ./build/main.json --private-key-path ./.pkey_local --max-fee auto
+protostar -p devnet deploy ${CLASS_HASH} --account-address ${ACCT_ADDR} --private-key-path ./.pkey --max-fee auto
 ```
 
 # protostar call smartcontract
 ```
-protostar -p devnet call --contract-address $CONTRACT_ADDR --function "get_balance"
+protostar -p devnet call --contract-address ${CONTRACT_ADDR} --function "get_balance"
 ```
 
 # protostar invoke smartcontract
 ```
-protostar -p devnet invoke --contract-address $CONTRACT_ADDR --function "increase_balance" --account-address $ACCT_ADDR --max-fee auto --inputs 3 --private-key-path ./.pkey
+protostar -p devnet invoke --contract-address ${CONTRACT_ADDR} --function "increase_balance" --account-address ${ACCT_ADDR} --max-fee auto --inputs 3 --private-key-path ./.pkey
 ```
 
 # protostar.toml
