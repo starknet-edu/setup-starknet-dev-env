@@ -39,7 +39,7 @@ pip3 install starknet-devnet
 
 # start your local dev env
 ```
-starknet-devnet
+starknet-devnet --seed 1234
 ```
 
 # install protostar
