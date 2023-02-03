@@ -39,7 +39,7 @@ pip3 install starknet-devnet
 
 # start your local dev env
 ```
-starknet-devnet
+starknet-devnet --seed 1234
 ```
 
 # install protostar
@@ -57,42 +57,37 @@ protostar build
 
 # protostar declare
 ```
-protostar -p devnet declare ./build/main.json
+protostar -p devnet declare ./build/main.json --account-address ${ACCT_ADDR} --private-key-path ./.pkey --max-fee auto
 ```
 
 # protostar deployment
 ```
-protostar -p devnet deploy  ./build/main.json
+protostar -p devnet deploy ${CLASS_HASH} --account-address ${ACCT_ADDR} --private-key-path ./.pkey --max-fee auto
 ```
 
 # protostar call smartcontract
 ```
-protostar -p devnet call --contract-address $CONTRACT_ADDR --function "get_balance"
+protostar -p devnet call --contract-address ${CONTRACT_ADDR} --function "get_balance"
 ```
 
 # protostar invoke smartcontract
 ```
-protostar -p devnet invoke --contract-address $CONTRACT_ADDR --function "increase_balance" --account-address $ACCT_ADDR --max-fee auto --inputs 3 --private-key-path ./.pkey
+protostar -p devnet invoke --contract-address ${CONTRACT_ADDR} --function "increase_balance" --account-address ${ACCT_ADDR} --max-fee auto --inputs 3 --private-key-path ./.pkey
 ```
 
 # protostar.toml
 ```
 [project]
-protostar-version = "0.7.0"
+protostar-version = "0.9.1"
 lib-path = "lib"
 
 [contracts]
 main = ["src/main.cairo"]
 
-[format]
-target = ["src", "tests"]
-ignore-broken = true
-
 [profile.devnet.project]
 gateway-url = "http://127.0.0.1:5050/"
 chain-id = 1536727068981429685321
 
-# https://github.com/Shard-Labs/starknet-devnet
 ["profile.devnet.protostar.deploy"]
 gateway-url="http://127.0.0.1:5050/"
 
